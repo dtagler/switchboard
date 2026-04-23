@@ -3,3 +3,7 @@
 .squad/agents/*/history.md merge=union
 .squad/log/** merge=union
 .squad/orchestration-log/** merge=union
+
+# Linguist: exclude squad working files from language stats
+.squad/files/** linguist-documentation
+.squad/** linguist-documentation
