@@ -1,0 +1,68 @@
+{
+  "agents": {
+    "jerry": {
+      "persistent_name": "Jerry",
+      "universe": "Seinfeld",
+      "role": "Lead / Windows Architect",
+      "created_at": "2026-04-20",
+      "legacy_named": false,
+      "status": "active"
+    },
+    "newman": {
+      "persistent_name": "Newman",
+      "universe": "Seinfeld",
+      "role": "Input Hooks Engineer",
+      "created_at": "2026-04-20",
+      "legacy_named": false,
+      "status": "active"
+    },
+    "kramer": {
+      "persistent_name": "Kramer",
+      "universe": "Seinfeld",
+      "role": "Bluetooth / HID Engineer",
+      "created_at": "2026-04-20",
+      "legacy_named": false,
+      "status": "active"
+    },
+    "elaine": {
+      "persistent_name": "Elaine",
+      "universe": "Seinfeld",
+      "role": "Tray UI & Packaging",
+      "created_at": "2026-04-20",
+      "legacy_named": false,
+      "status": "active"
+    },
+    "george": {
+      "persistent_name": "George",
+      "universe": "Seinfeld",
+      "role": "QA / Safety Tester",
+      "created_at": "2026-04-20",
+      "legacy_named": false,
+      "status": "active"
+    },
+    "peterman": {
+      "persistent_name": "Peterman",
+      "universe": "Seinfeld",
+      "role": "Docs Writer",
+      "created_at": "2026-04-20",
+      "legacy_named": false,
+      "status": "active"
+    },
+    "scribe": {
+      "persistent_name": "Scribe",
+      "universe": "(exempt)",
+      "role": "Memory & Logs",
+      "created_at": "2026-04-20",
+      "legacy_named": false,
+      "status": "active"
+    },
+    "ralph": {
+      "persistent_name": "Ralph",
+      "universe": "(exempt)",
+      "role": "Work Monitor",
+      "created_at": "2026-04-20",
+      "legacy_named": false,
+      "status": "active"
+    }
+  }
+}

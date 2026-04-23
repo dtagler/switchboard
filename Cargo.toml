@@ -1,0 +1,59 @@
+[package]
+name = "switchboard"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.90"
+description = "Windows ARM64 tray app that disables the Surface Laptop 7 internal keyboard while a Bluetooth keyboard is connected."
+license = "MIT"
+readme = "README.md"
+keywords = ["windows", "bluetooth", "keyboard", "tray", "arm64"]
+categories = ["command-line-utilities", "os::windows-apis"]
+repository = "https://github.com/dtagler/switchboard"
+
+[dependencies]
+tray-icon = "0.21.3"
+windows = { version = "0.58", features = [
+  "Win32_Devices_DeviceAndDriverInstallation",
+  "Win32_Devices_Properties",
+  "Win32_Foundation",
+  "Win32_Graphics_Gdi",
+  "Win32_System_Com",
+  "Win32_System_Console",
+  "Win32_System_Threading",
+  "Win32_System_Power",
+  "Win32_System_Shutdown",
+  "Win32_System_RemoteDesktop",
+  "Win32_System_Registry",
+  "Win32_System_LibraryLoader",
+  "Win32_System_WindowsProgramming",
+  "Win32_System_TaskScheduler",
+  "Win32_System_Variant",
+  "Win32_System_Ole",
+  "Win32_UI_Shell",
+  "Win32_Security",
+  "Win32_UI_WindowsAndMessaging",
+  "Win32_UI_Input_KeyboardAndMouse",
+  "Foundation",
+  "Foundation_Collections",
+  "Devices_Enumeration",
+  "Devices_Bluetooth",
+] }
+log = "0.4"
+simplelog = "0.12"
+
+[[bin]]
+name = "switchboard"
+path = "src/main.rs"
+
+[build-dependencies]
+embed-resource = "2"
+
+[dev-dependencies]
+insta = "1"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"

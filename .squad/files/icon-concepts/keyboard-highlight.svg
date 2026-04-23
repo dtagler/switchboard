@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor">
+  <!-- Keyboard with one key highlighted/glowing -->
+  <!-- Keyboard body -->
+  <rect x="2" y="10" width="28" height="20" rx="3"/>
+  <!-- Single highlighted key (top-left, larger, stands out) -->
+  <rect x="5" y="13" width="8" height="6" rx="2" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  <!-- Two subtle key rows suggested -->
+  <rect x="15" y="14" width="12" height="4" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  <rect x="5" y="22" width="22" height="4" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+</svg>

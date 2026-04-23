@@ -1,0 +1,42 @@
+# Squad team state (selective: keep structural files, ignore runtime state)
+# DO COMMIT:   team.md, routing.md, ceremonies.md, casting/policy.json, agents/*/charter.md, templates/
+# DO NOT COMMIT: runtime state, decisions, logs, session history
+.squad/decisions.md
+.squad/decisions/inbox/
+.squad/agents/*/history.md
+.squad/agents/*/history-archive.md
+.squad/orchestration-log/
+.squad/log/
+.squad/config.json
+.squad-workstream
+
+# Copilot CLI session state (local-only)
+.copilot/
+
+# Squad CI workflows + agent specs (local-only)
+.github/agents/
+.github/workflows/squad-*.yml
+.github/workflows/sync-squad-labels.yml
+
+# Owner-specific Bluetooth address config (PII). Never commit.
+bd_addr.txt
+*.bdaddr
+.env
+.env.local
+
+# Build artifacts
+target/
+dist/
+.xwin-cache/
+
+# IDE
+.vscode/
+!.vscode/settings.json
+.idea/
+
+# Logs
+*.log
+
+# OS
+Thumbs.db
+.DS_Store

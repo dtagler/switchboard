@@ -1,0 +1,10 @@
+1 24 "switchboard.exe.manifest"
+
+// Tray / EXE icons. The lowest-numbered ICON resource (101 = dark) is what
+// Explorer shows for the .exe. The runtime tray icon is selected from
+// 101 / 102 based on SystemUsesLightTheme (see src/theme.rs).
+//
+// IDI_TRAY_DARK  = 101  (Win11 default — dark taskbar)
+// IDI_TRAY_LIGHT = 102  (light taskbar)
+101 ICON "../assets/icons/switchboard-dark.ico"
+102 ICON "../assets/icons/switchboard-light.ico"

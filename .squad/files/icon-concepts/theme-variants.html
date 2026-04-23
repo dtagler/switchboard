@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwitchBoard Tray Icon — Theme Variants Gallery</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #121212;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      padding: 32px 48px;
+      line-height: 1.5;
+    }
+    h1 { font-weight: 300; font-size: 28px; margin-bottom: 8px; }
+    .intro {
+      max-width: 800px;
+      color: #a0a0a0;
+      font-size: 14px;
+      margin-bottom: 32px;
+      border-left: 3px solid #0078D4;
+      padding-left: 16px;
+    }
+    .strategy {
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .strategy-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+    .strategy-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .strategy-badge {
+      font-size: 11px;
+      background: #0078D4;
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .strategy-badge.single { background: #107c10; }
+    .strategy-badge.dual { background: #d83b01; }
+    .strategy-desc {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 16px;
+    }
+    .preview-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .preview-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .preview-label {
+      font-size: 11px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .preview-tile {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-radius: 6px;
+      min-width: 220px;
+    }
+    .preview-tile.dark { background: #1f1f1f; border: 1px solid #333; }
+    .preview-tile.light { background: #f3f3f3; border: 1px solid #ddd; }
+    .icon-set {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .icon-size {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+    .icon-size span {
+      font-size: 9px;
+      color: #666;
+    }
+    .preview-tile.light .icon-size span { color: #999; }
+    
+    /* Icon color classes */
+    .icon-white { color: #ffffff; }
+    .icon-black { color: #000000; }
+    .icon-gray-light { color: #b0b0b0; }
+    .icon-gray-dark { color: #404040; }
+    .icon-accent { color: #0078D4; }
+    .icon-amber { color: #ffb900; }
+    
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #333;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+<h1>SwitchBoard Tray Icon — Theme Variants</h1>
+<div class="intro">
+  <strong>Theme-aware icons:</strong> Windows 11 taskbars can be dark (#1f1f1f, the default) or light (#f3f3f3) 
+  depending on <code>SystemUsesLightTheme</code> in the registry. Brady picks <em>one</em> strategy below. 
+  If it's a "Dual ICO" strategy, we ship two icon files and swap at runtime via <code>Shell_NotifyIcon NIM_MODIFY</code> 
+  when the theme changes. "Single ICO" strategies work on both backgrounds without swapping.
+</div>
+
+<!-- Strategy 1: Pure Inverse Pair -->
+<div class="strategy">
+  <div class="strategy-header">
+    <span class="strategy-name">1. Pure Inverse Pair</span>
+    <span class="strategy-badge dual">Dual ICO</span>
+  </div>
+  <div class="strategy-desc">White icon on dark taskbar, black icon on light taskbar. Same geometry, opposite colors. Classic and bulletproof.</div>
+  <div class="preview-row">
+    <div class="preview-group">
+      <div class="preview-label">Dark Taskbar</div>
+      <div class="preview-tile dark">
+        <div class="icon-set">
+          <div class="icon-size"><svg class="icon-white" width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="currentColor" stroke="currentColor" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>16</span></div>
+          <div class="icon-size"><svg class="icon-white" width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="currentColor" stroke="currentColor" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>20</span></div>
+          <div class="icon-size"><svg class="icon-white" width="24" height="24" viewBox="0 0 32 32" fill="currentColor"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="currentColor" stroke="currentColor" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>24</span></div>
+          <div class="icon-size"><svg class="icon-white" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="currentColor" stroke="currentColor" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>32</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="preview-group">
+      <div class="preview-label">Light Taskbar</div>
+      <div class="preview-tile light">
+        <div class="icon-set">
+          <div class="icon-size"><svg class="icon-black" width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="currentColor" stroke="currentColor" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>16</span></div>
+          <div class="icon-size"><svg class="icon-black" width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="currentColor" stroke="currentColor" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>20</span></div>
+          <div class="icon-size"><svg class="icon-black" width="24" height="24" viewBox="0 0 32 32" fill="currentColor"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="currentColor" stroke="currentColor" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>24</span></div>
+          <div class="icon-size"><svg class="icon-black" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="currentColor" stroke="currentColor" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>32</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Strategy 2: Outline Only -->
+<div class="strategy">
+  <div class="strategy-header">
+    <span class="strategy-name">2. Outline Only (Thin Stroke)</span>
+    <span class="strategy-badge single">Single ICO</span>
+  </div>
+  <div class="strategy-desc">Transparent fill, lighter stroke weight. A mid-gray (#888) reads on both dark and light backgrounds. Simpler, no runtime swap needed.</div>
+  <div class="preview-row">
+    <div class="preview-group">
+      <div class="preview-label">Dark Taskbar</div>
+      <div class="preview-tile dark">
+        <div class="icon-set">
+          <div class="icon-size"><svg width="16" height="16" viewBox="0 0 32 32" fill="none" stroke="#888888" stroke-width="2"><rect x="3" y="3" width="26" height="26" rx="5"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#888888" stroke="none">§</text></svg><span>16</span></div>
+          <div class="icon-size"><svg width="20" height="20" viewBox="0 0 32 32" fill="none" stroke="#888888" stroke-width="2"><rect x="3" y="3" width="26" height="26" rx="5"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#888888" stroke="none">§</text></svg><span>20</span></div>
+          <div class="icon-size"><svg width="24" height="24" viewBox="0 0 32 32" fill="none" stroke="#888888" stroke-width="2"><rect x="3" y="3" width="26" height="26" rx="5"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#888888" stroke="none">§</text></svg><span>24</span></div>
+          <div class="icon-size"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#888888" stroke-width="2"><rect x="3" y="3" width="26" height="26" rx="5"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#888888" stroke="none">§</text></svg><span>32</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="preview-group">
+      <div class="preview-label">Light Taskbar</div>
+      <div class="preview-tile light">
+        <div class="icon-set">
+          <div class="icon-size"><svg width="16" height="16" viewBox="0 0 32 32" fill="none" stroke="#888888" stroke-width="2"><rect x="3" y="3" width="26" height="26" rx="5"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#888888" stroke="none">§</text></svg><span>16</span></div>
+          <div class="icon-size"><svg width="20" height="20" viewBox="0 0 32 32" fill="none" stroke="#888888" stroke-width="2"><rect x="3" y="3" width="26" height="26" rx="5"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#888888" stroke="none">§</text></svg><span>20</span></div>
+          <div class="icon-size"><svg width="24" height="24" viewBox="0 0 32 32" fill="none" stroke="#888888" stroke-width="2"><rect x="3" y="3" width="26" height="26" rx="5"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#888888" stroke="none">§</text></svg><span>24</span></div>
+          <div class="icon-size"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#888888" stroke-width="2"><rect x="3" y="3" width="26" height="26" rx="5"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#888888" stroke="none">§</text></svg><span>32</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Strategy 3: Filled Keycap -->
+<div class="strategy">
+  <div class="strategy-header">
+    <span class="strategy-name">3. Filled Keycap</span>
+    <span class="strategy-badge single">Single ICO</span>
+  </div>
+  <div class="strategy-desc">Solid rounded-rect background with contrasting glyph. High-contrast tile look — stands out on any taskbar. Self-contained.</div>
+  <div class="preview-row">
+    <div class="preview-group">
+      <div class="preview-label">Dark Taskbar</div>
+      <div class="preview-tile dark">
+        <div class="icon-set">
+          <div class="icon-size"><svg width="16" height="16" viewBox="0 0 32 32"><rect x="2" y="2" width="28" height="28" rx="5" fill="#e8e8e8" stroke="none"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>16</span></div>
+          <div class="icon-size"><svg width="20" height="20" viewBox="0 0 32 32"><rect x="2" y="2" width="28" height="28" rx="5" fill="#e8e8e8" stroke="none"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>20</span></div>
+          <div class="icon-size"><svg width="24" height="24" viewBox="0 0 32 32"><rect x="2" y="2" width="28" height="28" rx="5" fill="#e8e8e8" stroke="none"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>24</span></div>
+          <div class="icon-size"><svg width="32" height="32" viewBox="0 0 32 32"><rect x="2" y="2" width="28" height="28" rx="5" fill="#e8e8e8" stroke="none"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>32</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="preview-group">
+      <div class="preview-label">Light Taskbar</div>
+      <div class="preview-tile light">
+        <div class="icon-set">
+          <div class="icon-size"><svg width="16" height="16" viewBox="0 0 32 32"><rect x="2" y="2" width="28" height="28" rx="5" fill="#e8e8e8" stroke="#c0c0c0" stroke-width="1"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>16</span></div>
+          <div class="icon-size"><svg width="20" height="20" viewBox="0 0 32 32"><rect x="2" y="2" width="28" height="28" rx="5" fill="#e8e8e8" stroke="#c0c0c0" stroke-width="1"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>20</span></div>
+          <div class="icon-size"><svg width="24" height="24" viewBox="0 0 32 32"><rect x="2" y="2" width="28" height="28" rx="5" fill="#e8e8e8" stroke="#c0c0c0" stroke-width="1"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>24</span></div>
+          <div class="icon-size"><svg width="32" height="32" viewBox="0 0 32 32"><rect x="2" y="2" width="28" height="28" rx="5" fill="#e8e8e8" stroke="#c0c0c0" stroke-width="1"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>32</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Strategy 4: Soft Accent (Microsoft Blue) -->
+<div class="strategy">
+  <div class="strategy-header">
+    <span class="strategy-name">4. Soft Accent — Surface Blue</span>
+    <span class="strategy-badge dual">Dual ICO</span>
+  </div>
+  <div class="strategy-desc">Keycap stroke in Microsoft/Surface blue (#0078D4), glyph in theme color. Adds brand personality while staying system-appropriate.</div>
+  <div class="preview-row">
+    <div class="preview-group">
+      <div class="preview-label">Dark Taskbar</div>
+      <div class="preview-tile dark">
+        <div class="icon-set">
+          <div class="icon-size"><svg width="16" height="16" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="#0078D4" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#ffffff" stroke="#ffffff" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>16</span></div>
+          <div class="icon-size"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="#0078D4" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#ffffff" stroke="#ffffff" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>20</span></div>
+          <div class="icon-size"><svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="#0078D4" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#ffffff" stroke="#ffffff" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>24</span></div>
+          <div class="icon-size"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="#0078D4" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#ffffff" stroke="#ffffff" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>32</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="preview-group">
+      <div class="preview-label">Light Taskbar</div>
+      <div class="preview-tile light">
+        <div class="icon-set">
+          <div class="icon-size"><svg width="16" height="16" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="#0078D4" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>16</span></div>
+          <div class="icon-size"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="#0078D4" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>20</span></div>
+          <div class="icon-size"><svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="#0078D4" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>24</span></div>
+          <div class="icon-size"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="#0078D4" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>32</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Strategy 5: Glyph Only -->
+<div class="strategy">
+  <div class="strategy-header">
+    <span class="strategy-name">5. Glyph Only</span>
+    <span class="strategy-badge dual">Dual ICO</span>
+  </div>
+  <div class="strategy-desc">Drop the keycap rectangle, just the § symbol. Cleaner at 16px, more "system-y" and minimal. Lets the distinctive glyph speak for itself.</div>
+  <div class="preview-row">
+    <div class="preview-group">
+      <div class="preview-label">Dark Taskbar</div>
+      <div class="preview-tile dark">
+        <div class="icon-set">
+          <div class="icon-size"><svg width="16" height="16" viewBox="0 0 32 32"><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#ffffff" stroke="#ffffff" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>16</span></div>
+          <div class="icon-size"><svg width="20" height="20" viewBox="0 0 32 32"><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#ffffff" stroke="#ffffff" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>20</span></div>
+          <div class="icon-size"><svg width="24" height="24" viewBox="0 0 32 32"><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#ffffff" stroke="#ffffff" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>24</span></div>
+          <div class="icon-size"><svg width="32" height="32" viewBox="0 0 32 32"><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#ffffff" stroke="#ffffff" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>32</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="preview-group">
+      <div class="preview-label">Light Taskbar</div>
+      <div class="preview-tile light">
+        <div class="icon-set">
+          <div class="icon-size"><svg width="16" height="16" viewBox="0 0 32 32"><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>16</span></div>
+          <div class="icon-size"><svg width="20" height="20" viewBox="0 0 32 32"><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>20</span></div>
+          <div class="icon-size"><svg width="24" height="24" viewBox="0 0 32 32"><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>24</span></div>
+          <div class="icon-size"><svg width="32" height="32" viewBox="0 0 32 32"><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>32</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Strategy 6: Dual-Tone -->
+<div class="strategy">
+  <div class="strategy-header">
+    <span class="strategy-name">6. Dual-Tone</span>
+    <span class="strategy-badge dual">Dual ICO</span>
+  </div>
+  <div class="strategy-desc">Keycap in one color, glyph in another. Creates visual depth. Dark theme: gray cap + white §. Light theme: light gray cap + black §.</div>
+  <div class="preview-row">
+    <div class="preview-group">
+      <div class="preview-label">Dark Taskbar</div>
+      <div class="preview-tile dark">
+        <div class="icon-set">
+          <div class="icon-size"><svg width="16" height="16" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="#6e6e6e" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#ffffff" stroke="#ffffff" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>16</span></div>
+          <div class="icon-size"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="#6e6e6e" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#ffffff" stroke="#ffffff" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>20</span></div>
+          <div class="icon-size"><svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="#6e6e6e" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#ffffff" stroke="#ffffff" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>24</span></div>
+          <div class="icon-size"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="#6e6e6e" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#ffffff" stroke="#ffffff" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>32</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="preview-group">
+      <div class="preview-label">Light Taskbar</div>
+      <div class="preview-tile light">
+        <div class="icon-set">
+          <div class="icon-size"><svg width="16" height="16" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="#a0a0a0" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>16</span></div>
+          <div class="icon-size"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="#a0a0a0" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>20</span></div>
+          <div class="icon-size"><svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="#a0a0a0" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>24</span></div>
+          <div class="icon-size"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="5" fill="none" stroke="#a0a0a0" stroke-width="3"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="0.5" paint-order="stroke fill">§</text></svg><span>32</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Strategy 7: Inverted-Glyph Keycap -->
+<div class="strategy">
+  <div class="strategy-header">
+    <span class="strategy-name">7. Inverted-Glyph Keycap (Cut-out)</span>
+    <span class="strategy-badge dual">Dual ICO</span>
+  </div>
+  <div class="strategy-desc">Filled keycap with the § cut out, showing the taskbar color through the glyph. Bold, distinctive, reverses the figure/ground relationship.</div>
+  <div class="preview-row">
+    <div class="preview-group">
+      <div class="preview-label">Dark Taskbar</div>
+      <div class="preview-tile dark">
+        <div class="icon-set">
+          <div class="icon-size"><svg width="16" height="16" viewBox="0 0 32 32"><defs><mask id="m16d"><rect x="0" y="0" width="32" height="32" fill="white"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="black">§</text></mask></defs><rect x="2" y="2" width="28" height="28" rx="5" fill="#ffffff" mask="url(#m16d)"/></svg><span>16</span></div>
+          <div class="icon-size"><svg width="20" height="20" viewBox="0 0 32 32"><defs><mask id="m20d"><rect x="0" y="0" width="32" height="32" fill="white"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="black">§</text></mask></defs><rect x="2" y="2" width="28" height="28" rx="5" fill="#ffffff" mask="url(#m20d)"/></svg><span>20</span></div>
+          <div class="icon-size"><svg width="24" height="24" viewBox="0 0 32 32"><defs><mask id="m24d"><rect x="0" y="0" width="32" height="32" fill="white"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="black">§</text></mask></defs><rect x="2" y="2" width="28" height="28" rx="5" fill="#ffffff" mask="url(#m24d)"/></svg><span>24</span></div>
+          <div class="icon-size"><svg width="32" height="32" viewBox="0 0 32 32"><defs><mask id="m32d"><rect x="0" y="0" width="32" height="32" fill="white"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="black">§</text></mask></defs><rect x="2" y="2" width="28" height="28" rx="5" fill="#ffffff" mask="url(#m32d)"/></svg><span>32</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="preview-group">
+      <div class="preview-label">Light Taskbar</div>
+      <div class="preview-tile light">
+        <div class="icon-set">
+          <div class="icon-size"><svg width="16" height="16" viewBox="0 0 32 32"><defs><mask id="m16l"><rect x="0" y="0" width="32" height="32" fill="white"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="black">§</text></mask></defs><rect x="2" y="2" width="28" height="28" rx="5" fill="#1a1a1a" mask="url(#m16l)"/></svg><span>16</span></div>
+          <div class="icon-size"><svg width="20" height="20" viewBox="0 0 32 32"><defs><mask id="m20l"><rect x="0" y="0" width="32" height="32" fill="white"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="black">§</text></mask></defs><rect x="2" y="2" width="28" height="28" rx="5" fill="#1a1a1a" mask="url(#m20l)"/></svg><span>20</span></div>
+          <div class="icon-size"><svg width="24" height="24" viewBox="0 0 32 32"><defs><mask id="m24l"><rect x="0" y="0" width="32" height="32" fill="white"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="black">§</text></mask></defs><rect x="2" y="2" width="28" height="28" rx="5" fill="#1a1a1a" mask="url(#m24l)"/></svg><span>24</span></div>
+          <div class="icon-size"><svg width="32" height="32" viewBox="0 0 32 32"><defs><mask id="m32l"><rect x="0" y="0" width="32" height="32" fill="white"/><text x="16" y="16" dy=".26em" font-family="'Palatino Linotype',Palatino,serif" font-size="20" font-weight="bold" text-anchor="middle" fill="black">§</text></mask></defs><rect x="2" y="2" width="28" height="28" rx="5" fill="#1a1a1a" mask="url(#m32l)"/></svg><span>32</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  SwitchBoard Icon Theme Variants — Preview generated for Brady's review. 
+  Select ONE strategy; implementation will follow based on Single vs. Dual ICO approach.
+</footer>
+
+</body>
+</html>

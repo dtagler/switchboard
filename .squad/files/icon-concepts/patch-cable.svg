@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor">
+  <!-- Patch cable forming a loop - pure switchboard reference -->
+  <!-- Cable as thick curved path forming a loop/knot -->
+  <path d="M6 8 L6 16 Q6 24 14 24 L18 24 Q26 24 26 16 L26 8" 
+        fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  <!-- Plug ends (small rectangles) -->
+  <rect x="3" y="3" width="6" height="6" rx="1"/>
+  <rect x="23" y="3" width="6" height="6" rx="1"/>
+</svg>

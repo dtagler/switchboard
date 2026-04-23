@@ -1,0 +1,6 @@
+target/
+dist/
+.xwin-cache/
+.git/
+.squad/
+*.log

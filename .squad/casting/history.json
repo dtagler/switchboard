@@ -1,0 +1,20 @@
+{
+  "universe_usage_history": [
+    {
+      "universe": "Seinfeld",
+      "assigned_at": "2026-04-20",
+      "assignment_id": "init-2026-04-20",
+      "user_choice": true,
+      "note": "Universe explicitly requested by user during Init Mode, overriding allowlist default."
+    }
+  ],
+  "assignment_cast_snapshots": {
+    "init-2026-04-20": {
+      "universe": "Seinfeld",
+      "agents": ["jerry", "newman", "kramer", "elaine", "george", "peterman"],
+      "exempt": ["scribe", "ralph"],
+      "owner": "owner",
+      "project": "bluetooth-keyboard-app"
+    }
+  }
+}

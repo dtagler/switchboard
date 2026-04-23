@@ -1,0 +1,16 @@
+FROM rust:1-bookworm
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends llvm lld clang wine wine64 && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+RUN cargo install cargo-xwin --version 0.18.4
+RUN rustup target add aarch64-pc-windows-msvc x86_64-pc-windows-msvc
+RUN rustup component add rustfmt clippy
+
+ENV XWIN_CACHE_DIR=/xwin-cache
+RUN mkdir -p /xwin-cache /dist
+
+WORKDIR /build
+
+CMD ["sh","-c","cargo xwin build --release --target aarch64-pc-windows-msvc && cp target/aarch64-pc-windows-msvc/release/switchboard.exe /dist/switchboard.exe && ls -lh /dist/switchboard.exe"]
